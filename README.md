@@ -1,6 +1,2 @@
 # SQL_practice
- This is Jackie's practice space
-
-*bold text*
-
-----------------
+ This is Jacqueline's SQL practice space.
