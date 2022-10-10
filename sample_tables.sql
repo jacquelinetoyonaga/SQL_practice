@@ -12,7 +12,7 @@ INSERT INTO person (name, age, sex, buddy_id) VALUES ("William", 42, "male", 9);
 
 
 
-CREATE TABLE hobbies (id INTEGER PRIMARY KEY AUTO_INCREMENT, person_id, name);
+CREATE TABLE hobbies (id INTEGER PRIMARY KEY AUTO_INCREMENT, person_id INTEGER, name TEXT);
 INSERT INTO hobbies (person_id, name) VALUES (1, "hiking");
 INSERT INTO hobbies (person_id, name) VALUES (1, "painting");
 INSERT INTO hobbies (person_id, name) VALUES (2, "painting");
