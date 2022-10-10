@@ -60,6 +60,11 @@ SELECT name FROM hobbies WHERE person_id IN (SELECT id FROM person WHERE id = 1)
 SELECT AVG(age) FROM person WHERE id IN (SELECT person_id FROM hobbies WHERE name = "painting");
 
 
-
+/* what are the names of people who are buddies and are both female? Make sure to prevent the output from showing rows with reverse/swapped values.*/
+SELECT person.name, buddy.name
+FROM person
+JOIN person buddy
+ON person.buddy_id = buddy.id
+WHERE person.id < buddy.id AND person.sex = "female" AND buddy.sex = "female";
 
 
