@@ -56,5 +56,10 @@ WHERE hobbies.name = "hiking";
 SELECT name FROM hobbies WHERE person_id IN (SELECT id FROM person WHERE id = 1);
 
 
+/* what is the average age of people who like painting? */
+SELECT AVG(age) FROM person WHERE id IN (SELECT person_id FROM hobbies WHERE name = "painting");
+
+
+
 
 
