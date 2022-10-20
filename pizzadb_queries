@@ -1,0 +1,19 @@
+/* Querying the pizzadb */
+
+
+
+/* Which people ordered coca cola? */
+SELECT customers.firstname, customers.lastname
+FROM customers
+JOIN orders
+ON customers.cust_id = orders.cust_id
+WHERE orders.item_id IN (SELECT item_id FROM items WHERE item_name = "coca cola");
+
+
+
+/* What is the total revenue from all of the orders? */
+SELECT SUM(items.item_price*orders.quantity)
+FROM items
+JOIN orders
+ON items.item_id = orders.item_id;
+
