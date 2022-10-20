@@ -1,6 +1,4 @@
-SELECT * FROM person;
-
-SELECT * FROM hobbies;
+/* Querying the sample project */
 
 
 
