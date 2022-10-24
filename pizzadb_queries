@@ -12,8 +12,34 @@ WHERE orders.item_id IN (SELECT item_id FROM items WHERE item_name = "coca cola"
 
 
 /* What is the total revenue from all of the orders? */
-SELECT SUM(items.item_price*orders.quantity)
+SELECT SUM(items.item_price*orders.quantity) AS TotalRevenue
 FROM items
 JOIN orders
 ON items.item_id = orders.item_id;
+
+
+
+/* What is the total number of orders made? */
+SELECT MAX(order_id) AS TotalOrders FROM orders;
+
+
+
+/* What is the average order value (total revenue divided by the total number of orders made)? */
+SELECT (SUM(items.item_price*orders.quantity) / MAX(orders.order_id)) AS AverageOrderValue
+FROM orders
+JOIN items
+ON items.item_id = orders.item_id;
+
+
+
+/* What is the top selling item? */
+SELECT items.item_name, SUM(orders.quantity) AS TotalQuantitySold
+FROM items
+JOIN orders
+ON items.item_id = orders.item_id
+GROUP BY orders.item_id
+ORDER BY TotalQuantitySold DESC
+LIMIT 1;
+
+
 
