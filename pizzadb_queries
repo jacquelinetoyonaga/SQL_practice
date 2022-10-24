@@ -43,3 +43,12 @@ LIMIT 1;
 
 
 
+/* How much money has Jennifer Lang spent at the pizza store? */
+SELECT SUM(items.item_price*orders.quantity) AS JenniferLang
+FROM orders
+JOIN items
+ON items.item_id = orders.item_id
+WHERE orders.cust_id IN (SELECT cust_id FROM customers WHERE firstname = "Jennifer" AND lastname = "Lang");
+
+
+
